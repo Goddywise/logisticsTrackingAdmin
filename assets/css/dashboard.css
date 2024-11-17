@@ -1,0 +1,320 @@
+:root {
+  --site-color-pink: #c80936;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#main {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  box-shadow: 1px 0px 1px 0px var(--site-color-pink);
+}
+#main > div > a {
+  width: 40%;
+}
+#main > div > a img {
+  width: 150px;
+  height: 60px;
+  padding: 7px;
+}
+
+.header > span:first-child {
+  width: 45%;
+}
+.header > span:last-child {
+  width: 45px;
+  height: 45px;
+  padding-left: 12px;
+  padding-top: 12px;
+  border-radius: 50%;
+  margin-left: 30%;
+  margin-top: 7px;
+  background-color: rgb(250, 247, 248);
+  box-shadow: 0px 0px 1px 0px var(--site-color-pink);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.header > span > h2 {
+  display: flex;
+  font-size: 20px;
+  padding-top: 15px;
+  float: right;
+}
+.header > span i {
+  font-size: 23px;
+  padding-right: 3px;
+  margin-top: 15px;
+  color: #c80936;
+  float: left;
+}
+#main > div > aside {
+  display: block;
+  width: 15%;
+  height: 540px;
+  margin: 15px 5px 15px 7px;
+  font-size: 17px;
+  box-shadow: 0px 0px 1px 0px var(--site-color-pink);
+  border-radius: 7px;
+  align-items: center;
+  float: left;
+  font-family: Tahoma;
+}
+#main > div > aside li {
+  text-decoration: none;
+  list-style: none;
+  padding: 15px 0px 15px 0px;
+  cursor: pointer;
+  font-family: Tahoma;
+  /* min-height: 15px; */
+  width: 180px;
+  margin-left: 7px;
+  /* content: " "; */
+  /* background-color: aqua; */
+}
+#main > div > aside > li > a {
+  text-decoration: none;
+  align-items: center;
+  list-style: none;
+  color: black;
+}
+
+.highlight {
+  box-shadow: 0px 0px 1px 0px var(--site-color-pink);
+  padding: 7px 7px 0px 7px;
+  color: #c80936;
+  background-color: rgb(250, 247, 248);
+  transition: all 0.5s;
+}
+
+#main > div > aside > li > a i {
+  padding-right: 8px;
+  color: #c80936;
+  font-size: 20px;
+}
+.mainCont {
+  width: 82%;
+  height: auto;
+  float: right;
+  margin: 15px 7px 0px 0px;
+  box-shadow: 0px 0px 1px 0px var(--site-color-pink);
+  padding: 7px;
+}
+.content {
+  display: none;
+}
+.mainCont > .view-cont > div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  /* background-color: var(--site-color-pink); */
+  border-radius: 5px;
+}
+.mainCont > .view-cont > div > table {
+  width: 100%;
+  height: auto;
+}
+.mainCont > .view-cont > div > table > tbody > tr > th {
+  font-size: 20px;
+  padding: 7px;
+  box-shadow: 0 0 0 1px #aa3e57;
+  background-color: rgba(238, 213, 227, 0.943);
+}
+.mainCont > .view-cont > div > table > tbody > tr > td {
+  width: 70px;
+  padding: 8px 15px 8px 15px;
+  font-size: 18px;
+  color: #181616;
+  align-items: center;
+  box-shadow: 1px 1px 0 0 #eda1b3;
+  background-color: #fff;
+}
+.mainCont > .view-cont > div > table > tbody > tr > td > button:first-child {
+  background-color: rgb(49, 154, 49);
+  width: 40px;
+  height: 17px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.mainCont > .view-cont > div > table > tbody > tr > td > button:last-child {
+  background-color: red;
+  width: 40px;
+  height: 17px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.mainCont > .view-cont > div > table > tbody > tr > td > button > a {
+  text-decoration: none;
+  color: black;
+}
+/* ADD SHIPMENT STARTS HERE----- */
+.add-cont,
+.track-cont,
+.track-cont {
+  background-color: var(--site-color-pink);
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  /* background-color:  #c29a9a; */
+  align-items: center;
+  display: flex;
+  padding-bottom: 15px;
+}
+.add-cont div > h2 {
+  margin: 7px 0px 10px 0px;
+}
+.add-cont > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+.add-cont > form {
+  width: 100%;
+  height: auto;
+}
+.add-cont > div > form > label {
+  display: block;
+  width: 100%;
+  padding: 3px 0px 7px 0px;
+  align-items: center;
+  font-size: 15px;
+  font-family: Tahoma;
+}
+.add-cont > div > form > label > input {
+  width: 100%;
+  height: 35px;
+  align-items: center;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  padding: 7px;
+  border-radius: 3px;
+  background-color: rgb(248, 222, 222);
+}
+.add-cont > div > form > button {
+  margin-top: 10px;
+  width: 100%;
+  height: 35px;
+  color: white;
+  font-size: 17px;
+  border-radius: 7px;
+  font-family: serif;
+  cursor: pointer;
+  background-color: rgb(151, 12, 12);
+  border: none;
+}
+.edit-cont > div > form > button:hover {
+  background-color: rgb(181, 94, 94);
+  color: black;
+  transition: 0.7s;
+  font-size: 17px;
+}
+.tracking_id {
+  width: 90px;
+  height: 70px;
+  border: none;
+  outline: none;
+  /* background-color: #fff; */
+}
+.tracking_id > form > label {
+  position: relative;
+  margin-top: 18px;
+  height: auto;
+  padding-bottom: 15px;
+}
+.tracking_id > form > label > button {
+  position: absolute;
+  left: 285px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 7px 3px 0 0;
+  outline: none;
+  border: none;
+  background-color: rgb(248, 222, 222);
+  cursor: pointer;
+}
+
+.track {
+  width: 70%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  /* background-color: wheat; */
+}
+.track > form > label {
+  width: 70%;
+  height: 300px;
+  position: relative;
+  /* background-color: wheat; */
+}
+.track > form > label > input {
+  width: 250px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 7px 5px 5px 5px;
+  padding: 5px;
+  background-color: wheat;
+}
+.track > form > label > button {
+  margin-left: -30px;
+  font-size: 17px;
+  margin-top: 12px;
+  position: absolute;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  background-color: wheat;
+  cursor: pointer;
+}
+#result {
+  width: 98%;
+  height: auto;
+  display: flex;
+  /* background-color: rgb(247, 248, 250); */
+  border-radius: 7px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#result > p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70px;
+  padding: 7px;
+  margin: 0 0 7px 0;
+  padding: 1px;
+  box-shadow: 1px #e1dada;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  text-align: center;
+  font-family: "Lucida Sans";
+  background-color: rgb(246, 244, 242);
+  margin: 2px 0 0 2px;
+  transition-delay: all 0.5s;
+}
+
+/* MEDIA SCREEN FOR MOBILE */
+
+@media screen {
+}

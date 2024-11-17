@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/images/cargo_logo.png"/>
+    <link rel="stylesheet" href="/assets/css/dashboard.css" />
+<link rel="stylesheet" href="/assets/css/bootstrapIcons/bootstrap-icons.css">
+    <title>Admin-Dashboard</title>
+</head>
+<body>
+  <div id="main">
+    <div class="header">
+        <a href="/">
+            <img src="/assets/images/cargo_logo.png" alt=""logo/>
+        </a>
+        <span>
+            <i class="bi-person"></i>
+            <h2>Admin Dashboard</h2>
+        </span>
+        <span id="username">AC</span>
+</div>
+
+<div>
+    <aside>
+        <li>
+            <a class="menu default" onclick="showMenu( this, '.view-cont')"><i class="bi-box-seam"></i>All Shipment</a>
+       </li> 
+       
+        <li>
+            <a class="menu " onclick="showMenu(this,'.add-cont' )" ><i class="bi-plus-square" ></i>Add Shipment</a>
+        </li> 
+
+        <!-- <li>
+            <a class="menu " onclick="showMenu(this,'.edit-cont' )" ><i class="bi-pencil-square" ></i>Edit Shipment</a>
+        </li> -->
+
+        <li>
+            <a class="menu" onclick="showMenu(this, '.track-cont')"><i class="bi-search"></i>Track Shipments</a>
+         </li> 
+          <!-- 
+       <li>
+             <a class="menu" onclick="showMenu(this, '.history-cont')"><i class="bi-box-seam"></i>Shipment History</a>
+        </li> -->
+       <li>
+              <a class="menu" onclick="showMenu(this, '.notification-cont')"><i class="bi-bell"></i> 
+        Notifications</a>
+        </li> 
+
+       <li><a href="/"><i class="bi-power"></i>Logout</a></li> 
+    
+    </aside>
+</div>
+    <div class="mainCont">
+        <div class="content view-cont">
+            <div>
+
+            </div>
+        </div>
+
+        <div class="content add-cont">
+        <div>
+            <h2>Create New Shipment</h3>
+                <form onsubmit="createShipment(event)">
+                    <label for="sender_name">Sender's Name <br/>
+                        <input type="text" id="sender_name"/>
+                        </label>
+
+                        <label for="receiver_name">Receiver's Name <br/>
+                            <input type="text" id="receiver_name"/>
+                        </label>
+
+                        <label for="package_name"> Package <br/>
+                            <input type="text" id="package"/>
+                        </label>
+
+                        <label for="location">Location <br/>
+                            <input type="text" id="location"/>
+                        </label>
+
+                        <label for="date"> Current Date<br/>
+                            <input type="date" id="date"/>
+                        </label>
+
+                        <label for="status"> Status <br/>
+                            <input type="text" id="status"/>
+                        </label>
+
+                        <label for="tracking_number"> Tracking Number <br/>
+                            <input type="text" id="tracking_number" required/>
+                        </label>
+                        
+                        <button type="submit">Add Shipment  &NestedGreaterGreater;</button>
+            
+                </form>
+        </div>
+        </div>
+        
+        <!-- The below edit code was never used again. -->
+        <!-- <div class="content edit-cont">
+            <div>
+                <h2>Edit Shipment</h3>
+                    <form onsubmit="editShipment(event)">
+                        <label for="sender_name">Sender's Name <br/>
+                            <input type="text" id="sender_name"/>
+                            </label>
+    
+                            <label for="receiver_name">Receiver's Name <br/>
+                                <input type="text" id="receiver_name"/>
+                            </label>
+    
+                            <label for="package_name"> Package <br/>
+                                <input type="text" id="package"/>
+                            </label>
+    
+                            <label for="location">Location <br/>
+                                <input type="text" id="location"/>
+                            </label>
+    
+                            <label for="date"> Current Date<br/>
+                                <input type="date" id="date"/>
+                            </label>
+    
+                            <label for="status"> Status <br/>
+                                <input type="text" id="status"/>
+                            </label>
+    
+                            <label for="tracking_number"> Tracking Number <br/>
+                                <input type="text" id="tracking_number" required/>
+                            </label>
+                            
+                            <button type="submit">Add Shipment  &NestedGreaterGreater;</button>
+                
+                    </form>
+            </div>
+        </div> -->
+        
+        <!-- The below is form for tracking  -->
+        <div class="content track-cont" onsubmit="handleTrack(event)">
+            <h3>Track Shipment</h3>
+            <span class="track">
+                <form>
+                    <label class="track_label" for="tracking_id">
+                        <input type="text" id="searchId" placeholder="Enter Tracking Number" />
+                        <button type="submit" class="bi-search"></button>
+                        <br><span style="color:red" id="inp_error"></span>
+                    </label>
+                </form>
+            </span>
+            <div id="result"> 
+            </div>
+        </div>
+        <!-- <div class="content history-cont">Shipment History
+
+        </div> -->
+        <div class="content notification-cont">Notifications 
+            
+        </div>
+</div> 
+</div>  
+<script src="/assets/js/dashboard.js"></script>
+</body>
+</html>
+  

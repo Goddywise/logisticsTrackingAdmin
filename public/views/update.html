@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/images/cargo_logo.png"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/update.css" />
+    <title>Update</title>
+</head>
+<body>
+    <div class="form-div">
+        <!-- <h3>Update Shipmment</h3> -->
+            <form onsubmit="updateShipmment(event)">
+                <h3>Update Shipmment</h3>
+                <label for="sender_name">Sender's Name <br/>
+                    <input type="text" id="sender_name"/>
+                    </label>
+
+                    <label for="receiver_name">Receiver's Name <br/>
+                        <input type="text" id="receiver_name"/>
+                    </label>
+
+                    <label for="package_name"> Package <br/>
+                        <input type="text" id="package"/>
+                    </label>
+
+                    <label for="location">Location <br/>
+                        <input type="text" id="location"/>
+                    </label>
+
+                    <label for="date"> Current Date<br/>
+                        <input type="date" id="date"/>
+                    </label>
+
+                    <label for="status"> Status <br/>
+                        <input type="text" id="status"/>
+                    </label>
+
+                    <label for="tracking_number"> Tracking Number <br/>
+                        <input type="text" id="tracking_number" placeholder="Only Super-admin can update this field!" readonly/>
+                    </label>
+                    
+                    <label>
+                    <button type="submit">Update Shipment &NestedGreaterGreater;</button>
+                    </label>
+            </form>
+    </div> 
+</body>
+</html>

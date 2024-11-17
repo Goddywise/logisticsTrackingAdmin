@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/header.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/bootstrapIcons/bootstrap-icons.css"
+    />
+    <title>Logistics</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-section">
+        <a href="/" class="logo">
+          <img src="/assets/images/cargo_logo.png" />
+        </a>
+      </div>
+
+      <div class="globalsearch">
+        <form>
+          <input type="text" placeholder="Search anything here......" />
+          <button type="submit"><i class="bi-search"></i></button>
+        </form>
+      </div>
+
+      <nav>
+        <a href="/home.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/contact-us.html">Contact Us</a>
+        <a href="/track-shipment.html"><button>Track-Shipment</button></a>
+      </nav>
+
+      <div class="profile">
+        <i class="bi-person-circle" onclick="handleToggle()"></i>
+        <span class="toggleclass" id="toggle">
+          <li>
+            <a><i class="bi-person"></i>Login</a>
+          </li>
+          <li>
+            <a><i class="bi-person-plus"></i>Sign up</a>
+          </li>
+        </span>
+      </div>
+    </header>
+
+    <script src="/assets/js/header.js"></script>
+  </body>
+</html>

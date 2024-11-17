@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Tohama;
+}
+
+.form-div{
+    width: 100%;
+    height: 630px;
+    background-color: rgb(151, 12, 12);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+form{
+    width: 50%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:#fff;
+    border-radius: 7px;
+    margin: 10px 0 0 10px;
+    
+}
+
+form > label{
+    margin-top: 7px;
+    width: 350px;
+    height: 70px;
+   
+}
+form > label > button{
+    width: 100%;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(151, 12, 12);
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    justify-content: center;
+    align-items: center;
+  
+}
+form > label > button:hover{
+    background-color: rgb(250, 199, 199);
+    color: black;
+    transition: 0.5s;
+}
+
+form > label > input{
+    width:100%;
+    height: 34px;
+    padding: 7px;
+    outline: none;
+    font-size: 17px;
+    border: none;
+    background-color: rgb(248, 222, 222);
+    border-radius: 5px;
+    font-family: Tohama;
+    font-weight: 300;
+    
+}
+
