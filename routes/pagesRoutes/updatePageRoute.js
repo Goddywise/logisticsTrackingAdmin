@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require ('express');
 const router = express.Router();
 const {readFile} = require('fs');
 
@@ -23,7 +23,5 @@ Promise.allSettled([update, footer]).then(values =>{
 })
 
 })
-
-
 
 module.exports = router;

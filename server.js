@@ -18,6 +18,7 @@ const adminRoute = require("./routes/adminUser");
 const trackRoutes = require("./routes/trackParcel");
 const updateRoute = require("./routes/updateRoute");
 const deleteRoute = require("./routes/deleteParcel");
+const getParcelAndUpate = require("./routes/getParcelAndUpdate");
 
 
 app.use([cors(), bodyParser.json(), express.static(__dirname)]);//Middleware
@@ -31,9 +32,10 @@ app.use("/dashboard/admin", updatePageRoute); //Update route
 app.use("/db", getAllShippmentRoute); //Getting shippment details
 app.use("/createShippment", createShipment); //Allow parcels by Admin
 app.use("/adminUser", adminRoute); //Allows admin to login.
-app.use("/user", clientsRoute); //Allowed users to create account via fronted.
+app.use("/user", clientsRoute); //Allowed users to create account via UI.
 app.use("/track", trackRoutes); //Track route
-app.use("/update",updateRoute ),
+app.use("/admin", getParcelAndUpate); //Get data into input field to update
+app.use("/admin",updateRoute ),
 app.use("/admin",deleteRoute )
 
 app.listen(process.env.PORT || 8080, () => {

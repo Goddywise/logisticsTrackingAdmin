@@ -11,7 +11,7 @@ router.post("/create", (req, res) => {
 
     if (data.length > 0) {
         console.log('User with this tracking number already exist')
-      return res.json({
+      return res.status(404).json({
         messageErr: " User with this  Tracking ID already exist",
       });
     } else {
@@ -29,16 +29,18 @@ router.post("/create", (req, res) => {
       ];
       db.query(sql2, [values], (err, data) => {
         console.log(data);
-        if (err) return res.json({ err: "Error" });
-        if (data.length > 0) {
+        if(err){
+          return res.status(500).json(err);
+        }else{
           // res.location("/dashboard/admin")
-          return res.json({ message: "Shipment Created Successfully!" });
-        } else {
-          return res.json({
-            errMessage:
-              "An error occur, shipment wasn't created! user already exist",
-          });
-        }
+          return res.status(200).json({ message: "Shipment Created Successfully!" });
+        } 
+        // else {
+        //   return res.status(500).json({
+        //     errMessage:
+        //       "An error occur, shipment wasn't created! user already exist",
+        //   });
+        // }
       });
     }
   });

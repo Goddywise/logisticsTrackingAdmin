@@ -1,10 +1,10 @@
-window.onload = ()=>{
-    // alert('hello')
-    let user = localStorage.getItem('usr');
-    if(!user) location.href = '/';
-     localStorage.clear();
+// window.onload = ()=>{
+//     // alert('hello')
+//     let user = localStorage.getItem('usr');
+//     if(!user) location.href = '/';
+//      localStorage.clear();
 
-}
+// }
 
 const showMenu = (menu, content) => {
   let allContent = document.querySelectorAll(".content");
@@ -20,7 +20,7 @@ showMenu("default", ".view-cont");
 //       eachMenu.classList.remove('highlight');
 //   })
 
-//API to get all shipment
+//API call to get all shipment
 const getAllShippment = () => {
   let res = fetch(`/db/getrecords`, {
     method: "GET",
@@ -68,7 +68,7 @@ const arrangeProduct = (data) => {
             <td>${tableData.status}</td>
             <td>${tableData.tracking_number}</td>
               <td>
-                 <button><a href="/dashboard/admin/update">Edit</a></button>
+                 <button onclick="fetchRecords(${tableData.id})"><a href="/dashboard/admin/update">Edit</a></button>
                  <button onclick="handleDelete(${tableData.id})">Delete</button>
               </td>
           </tr>
@@ -110,7 +110,7 @@ try {
 }
 
 // API call to create a new shipment
-const createShipment =async (e) => {
+const createShipment = async (e) => {
   e.preventDefault();
   const sender_name = document.getElementById("sender_name").value;
   const receiver_name = document.getElementById("receiver_name").value;
@@ -120,7 +120,7 @@ const createShipment =async (e) => {
   const status = document.getElementById("status").value;
   const tracking_number = document.getElementById("tracking_number").value;
 
-  let res = fetch(`/createShippment/create`, {
+  let res = await fetch(`/createShippment/create`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -136,16 +136,22 @@ const createShipment =async (e) => {
     }),
   })
     .then((data) => data)
-    .then((data) => data.data)
+    .then((data) => {
+      if(data.ok){
+        alert(result.message)
+      }else{
+        alert(data.messageErr)
+      }
+    })
+    // .then((data) => data.data)
     .catch((err) => console.log(err));
-
   // const  result = await res.json()
-  if (result.ok) {
-    alert("New record has been created!");
-    window.location.reload();
-  } else {
-    alert("User with this tracking number already exist");
-  }
+  // if (result.ok) {
+  //   alert("New record has been created!");
+  //   window.location.reload();
+  // } else {
+  //   alert("User with this tracking number already exist");
+  // }
   // console.log(data.data);
 };
 
