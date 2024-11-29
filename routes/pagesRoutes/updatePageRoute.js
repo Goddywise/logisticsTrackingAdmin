@@ -3,7 +3,7 @@ const router = express.Router();
 const {readFile} = require('fs');
 
 
-router.get("/update", (req, res)=>{
+router.get("/update/:id", (req, res)=>{
     const update = new Promise((resolve, rejects)=>{
         readFile('./public/views/update.html', 'utf-8', (err, data)=>{
             if(err) rejects (err);

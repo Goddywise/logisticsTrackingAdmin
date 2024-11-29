@@ -68,7 +68,7 @@ const arrangeProduct = (data) => {
             <td>${tableData.status}</td>
             <td>${tableData.tracking_number}</td>
               <td>
-                 <button onclick="fetchRecords(${tableData.id})"><a href="/dashboard/admin/update">Edit</a></button>
+                 <button onclick="fetchRecords(${tableData.id})"><a href="/dashboard/admin/update/${tableData.id}">Edit</a></button>
                  <button onclick="handleDelete(${tableData.id})">Delete</button>
               </td>
           </tr>
@@ -188,5 +188,10 @@ const handleTrack = async (e) => {
       document.getElementById("result").textContent = err.message;
     });
 };
+
+const clearTrackInp = ()=>{
+  // alert('Hello clr')
+ 
+}
 
 

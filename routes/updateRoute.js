@@ -14,12 +14,14 @@ router.put("/update/:id", (req, res) => {
     req.body.tracking_number,
   ];
   const sql =
-    "UPDATE shipment SET 'sender_name'=?, 'receiver_name'=?, 'package_name'=?, 'location'=?, 'date'=?, 'status'=?, 'tracking_number'=? WHERE id=?";
+    "UPDATE shipment SET 'sender_name'= ?, 'receiver_name'= ?, 'package_name'=?, 'location'= ?, 'date'= ?, 'status'= ?, 'tracking_number'= ? WHERE id= ?";
 
-  db.query(sql, [...value, id], (err, data) => {
+  db.query(sql, [...value,id], (err, data) => {
     if (err) {
+      console.log(err);
       return res.status(500).json({ err: "An error occurred" });
     }
+    console.log(data)
     return res.status(200).json({ data: "Record updatd sucessfully" });
   });
 });

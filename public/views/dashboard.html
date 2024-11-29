@@ -60,7 +60,7 @@
 
         <div class="content add-cont">
         <div>
-            <h2>Create New Shipment</h3>
+            <h3>Create New Shipment</h3>
                 <form onsubmit="createShipment(event)">
                     <label for="sender_name">Sender's Name <br/>
                         <input type="text" id="sender_name"/>
@@ -136,7 +136,7 @@
         </div> -->
         
         <!-- The below is form for tracking  -->
-        <div class="content track-cont" onsubmit="handleTrack(event)">
+        <div class="content track-cont " id="trk" onsubmit="handleTrack(event)">
             <h3>Track Shipment</h3>
             <span class="track">
                 <form>
@@ -146,6 +146,7 @@
                         <br><span style="color:red" id="inp_error"></span>
                     </label>
                 </form>
+                <button id="clr" onclick="clearTrackInp()">Clear</button>
             </span>
             <div id="result"> 
             </div>

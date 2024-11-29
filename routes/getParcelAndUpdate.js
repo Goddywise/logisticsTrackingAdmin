@@ -9,6 +9,7 @@ router.get("/getdata/:id", (req, res)=>{
         if(err){
             res.status(500).json({err: err.message});
         }else{
+            // console.log(result)
             res.status(200).send(result[0]);
         }
     })

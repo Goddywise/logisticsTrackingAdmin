@@ -197,7 +197,7 @@
   font-family: Tahoma;
 }
 .add-cont > div > form > label > input {
-  width: 100%;
+  width: 350px;
   height: 35px;
   align-items: center;
   font-size: 17px;
@@ -212,21 +212,21 @@
   width: 100%;
   height: 35px;
   color: white;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 7px;
   font-family: serif;
   cursor: pointer;
   background-color: rgb(151, 12, 12);
   border: none;
 }
-.edit-cont > div > form > button:hover {
-  background-color: rgb(181, 94, 94);
-  color: black;
+.add-cont > div > form > button:hover {
+  background-color: rgb(100, 11, 5);
+  /* color: black; */
   transition: 0.7s;
-  font-size: 17px;
+  font-size: 18px;
 }
 .tracking_id {
-  width: 90px;
+  width: 100px;
   height: 70px;
   border: none;
   outline: none;
@@ -283,6 +283,23 @@
   border: none;
   background-color: wheat;
   cursor: pointer;
+  color: #c80936;
+}
+#clr{
+  height: 30px;
+  width: 40px;
+  margin: 7px 0 0 0;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #c80936;
+  background-color: black;
+  cursor: pointer;
+  transition: 3s;
+}
+#clr:hover{
+  background-color: rgb(248, 218, 163);
 }
 #result {
   width: 98%;
@@ -311,7 +328,11 @@
   font-family: "Lucida Sans";
   background-color: rgb(246, 244, 242);
   margin: 2px 0 0 2px;
-  transition-delay: all 0.5s;
+  transition: all 1.5s;
+}
+#result > p:hover{
+  background-color: black;
+  color: white;
 }
 
 /* MEDIA SCREEN FOR MOBILE */
