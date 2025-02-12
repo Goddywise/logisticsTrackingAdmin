@@ -68,7 +68,7 @@ const arrangeProduct = (data) => {
             <td>${tableData.status}</td>
             <td>${tableData.tracking_number}</td>
               <td>
-                 <button onclick="fetchRecords(${tableData.id})"><a href="/dashboard/admin/update/${tableData.id}">Edit</a></button>
+                 <button><a href="/dashboard/admin/update/${tableData.id}">Edit</a></button>
                  <button onclick="handleDelete(${tableData.id})">Delete</button>
               </td>
           </tr>
@@ -122,9 +122,7 @@ const createShipment = async (e) => {
 
   let res = await fetch(`/createShippment/create`, {
     method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
+    headers: {"Content-type": "application/json"},
     body: JSON.stringify({
       sender_name,
       receiver_name,
@@ -135,24 +133,18 @@ const createShipment = async (e) => {
       tracking_number,
     }),
   })
-    .then((data) => data)
+    // const resspose = await res.json()
     .then((data) => {
-      if(data.ok){
-        alert(result.message)
-      }else{
-        alert(data.messageErr)
-      }
+         if(data.status === 200){
+          alert(data.successMessage)
+          window.location.reload()
+        }else{
+          alert(data.errorMessage)
+        }
     })
-    // .then((data) => data.data)
-    .catch((err) => console.log(err));
-  // const  result = await res.json()
-  // if (result.ok) {
-  //   alert("New record has been created!");
-  //   window.location.reload();
-  // } else {
-  //   alert("User with this tracking number already exist");
-  // }
-  // console.log(data.data);
+  
+    .then((err) => console.log(err))
+ 
 };
 
 // API call to Track a shipment
@@ -189,9 +181,9 @@ const handleTrack = async (e) => {
     });
 };
 
-const clearTrackInp = ()=>{
-  // alert('Hello clr')
+// const clearTrackInp = ()=>{
+//   // alert('Hello clr')
  
-}
+// }
 
 

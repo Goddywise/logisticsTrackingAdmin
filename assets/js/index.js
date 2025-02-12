@@ -67,23 +67,28 @@ const handleSubmit = async (e)=>{
     const password = document.getElementById('password').value;
     e.preventDefault(); 
     validateInput();
-    // console.log(username,password)
-    let res = await fetch(`/adminUser/login`,{
-        method:"POST",
-        headers:{
-            "Content-Type":"Application/json"
-        },
-        body:JSON.stringify({username,password})
-    });
-    
-    let data = await res.json();
 
-    if(data.messageSuccess==="SuccesString"){
-        alert(data.message);
-        localStorage.setItem('usr',username);
-        location.href='/dashboard/admin';
-        return false;
+    try {
+        let res = await fetch(`/adminUser/login`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"Application/json"
+            },
+            body:JSON.stringify({username,password})
+        });
+        
+        let data = await res.json();
+    
+        if(data.messageSuccess==="SuccesString"){
+            alert(data.message);
+            localStorage.setItem('usr',username);
+            location.href='/dashboard/admin';
+            return false;
+        }
+        alert(data.errMessage);  
+    } catch (e) {
+       console.log(e) 
     }
-    alert(data.errMessage);
+
 
 }

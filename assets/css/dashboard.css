@@ -16,6 +16,8 @@
   width: 100%;
   height: 60px;
   box-shadow: 1px 0px 1px 0px var(--site-color-pink);
+  /* position: fixed;
+  margin-bottom: 25px; */
 }
 #main > div > a {
   width: 40%;
@@ -285,9 +287,9 @@
   cursor: pointer;
   color: #c80936;
 }
-#clr{
+.trck{
   height: 30px;
-  width: 40px;
+  width: 55px;
   margin: 7px 0 0 0;
   border: none;
   outline: none;
@@ -298,8 +300,10 @@
   cursor: pointer;
   transition: 3s;
 }
-#clr:hover{
+.trck:hover{
   background-color: rgb(248, 218, 163);
+  color:#181616;
+
 }
 #result {
   width: 98%;
@@ -310,6 +314,7 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  
 }
 
 #result > p {
@@ -329,6 +334,7 @@
   background-color: rgb(246, 244, 242);
   margin: 2px 0 0 2px;
   transition: all 1.5s;
+ 
 }
 #result > p:hover{
   background-color: black;

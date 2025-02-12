@@ -5,74 +5,80 @@
 //      localStorage.clear();
 // }
 
-// const fetchRecords = async () => {
-//   alert('HI ')
-//   const res = await fetch(`/admin/getdata/${id}`, {
-//     method: "GET",
-//     headers: {
-//       "Content-type": "application/json",
-//     },
-//   }).then((res) => {
-//     if (!res.ok) {
-//       throw new Error("Failed to fetch data to update");
-//     }
-//     alert("Hi");
-//     return res.json();
-//   });
-//   const data = await res.json;
-//   //   console.log(data.location)
+window.onload = () => {
+  const pathname = window.location.pathname;
+  const id = pathname.split("/").pop();
 
-//   const sender_name = (document.getElementById("sender_name").value =
-//     data.sender_name);
-//   const receiver_name = (document.getElementById("receiver_name").value =
-//     data.receiver_name);
-//   const package_name = (document.getElementById("package_name").value =
-//     data.package_name);
-//   const location = (document.getElementById("location").value = data.location);
-//   const date = (document.getElementById("date").value = data.date);
-//   const status = (document.getElementById("status").value = data.status);
-//   const tracking_number = (document.getElementById("tracking_number").value =
-//     data.tracking_number);
-// };
+  fetch(`/getdata/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json(); // Convert response to JSON
+    })
+    .then((data) => {
+      if (!data) {
+        throw new Error("No data received");
+      }
+
+      document.getElementById("sender_name").value = data.sender_name || "";
+      document.getElementById("receiver_name").value = data.receiver_name || "";
+      document.getElementById("package_name").value = data.package_name || "";
+      document.getElementById("location").value = data.location || "";
+      document.getElementById("date").value = data.date || "";
+      document.getElementById("status").value = data.status || "";
+      // document.getElementById("tracking_number").value = data.tracking_number || "";
+    })
+    .catch((err) => console.error("Error fetching data:", err));
+};
 
 const updateRecords = async (e) => {
   e.preventDefault();
- 
+
+  const pathname = window.location.pathname;
+  const id = pathname.split("/").pop();
+
   const sender_name = document.getElementById("sender_name").value;
   const receiver_name = document.getElementById("receiver_name").value;
   const package_name = document.getElementById("package_name").value;
   const location = document.getElementById("location").value;
   const date = document.getElementById("date").value;
   const status = document.getElementById("status").value;
-  const tracking_number = document.getElementById("tracking_number").value;
 
-  // const id = new URLSearchParams()
- 
-  const res = await fetch(`/admin/update/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      sender_name,
-      receiver_name,
-      package_name,
-      location,
-      date,
-      status,
-      tracking_number,
-    }),
-  })
-    let data = await res.json()
-    // .then((response) => {
-    //   if (response.ok) {
-    //     alert("Shipment is updated succesfully!");
-    //     // location.href = "/";
-    //   } else {
-    //     throw new Error("Failed to update shipment.");
-    //   }
-    // })
-    // .catch((error) => {
-    //   console.error("Error:", error);
-    //   alert("error updating shipment");
-    // });
-    
+
+  try {
+    const data = await fetch(`/update/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sender_name,
+        receiver_name,
+        package_name,
+        location,
+        date,
+        status,
+      }),
+    })
+      // let res = await data.json()
+      .then((res) => {
+        if (res.status === 200) {
+          alert("Shipment has been updated succesfully...");
+
+          window.location.href = "/dashboard/admin";
+        } else {
+          console.log("Failed to update shipment.");
+        }
+      })
+      .catch((e) => {
+        // console.error("Error:", error);
+        alert(e, "error updating shipment");
+      });
+  } catch (e) {
+    console.log(e);
+  }
 };

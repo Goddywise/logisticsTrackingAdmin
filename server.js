@@ -34,10 +34,10 @@ app.use("/createShippment", createShipment); //Allow parcels by Admin
 app.use("/adminUser", adminRoute); //Allows admin to login.
 app.use("/user", clientsRoute); //Allowed users to create account via UI.
 app.use("/track", trackRoutes); //Track route
-app.use("/admin", getParcelAndUpate); //Get data into input field to update
-app.use("/admin",updateRoute ),
+app.use("/", getParcelAndUpate); //Get data into input field to update
+app.use("/",updateRoute ),
 app.use("/admin",deleteRoute )
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log(`Server running on http://localhost:8080 ${process.env.PORT || 8080}`);
+  console.log(`Server running on http://localhost:${process.env.PORT || 8080}`);
 });
